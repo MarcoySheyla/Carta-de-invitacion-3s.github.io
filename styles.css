@@ -1866,18 +1866,71 @@ clip-path: inset(0 0 0 0);
    SECCIÓN 6: MENSAJE FINAL
 ========================================================= */
 
-.final-section {
+
+
+
+
+/* =========================================================
+   INTRO SECCIÓN FINAL (CONSIDERACIONES)
+========================================================= */
+
+.final-intro {
   width: 100%;
-  background: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  text-align: center;
+ max-width: 300px;
+  margin-top: clamp(40px, 15vw, 60px);
+  margin-bottom: clamp(20px, 6vw, 40px);
+}
+
+/* Título */
+.final-intro-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(32px, 6vw, 45px);
+  color: #7A8450;
+
+  margin-bottom: clamp(10px, 3vw, 18px);
+}
+
+/* Texto */
+
+.final-intro-text {
+  font-family: var(--font-serif);
+  font-size: clamp(12px, 3vw, 20px);
+  color: #000000;
+  max-width: 480px;        /* ✅ controla el ancho */
+  width: 100%;
+  margin: 0 auto;          /* ✅ centra de verdad */
+  text-align: center;
+  line-height: 1.6;
+}
+
+
+
+.final-section {
+  width: 100%;
+  background: #ffffff;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
   position: relative;
   overflow: hidden; /* 🔥 CLAVE TOTAL */
   padding-top: 20px; /* espacio para el rasgado */
 
 }
+
+.final-intro,
+.final-torn-wrapper,
+.final-lettering,
+.final-footer-img,
+.final-card {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 /* =========================
    1. CAJA MEDIA
@@ -1924,9 +1977,9 @@ clip-path: inset(0 0 0 0);
 
 /* corazón */
 .final-heart {
-  font-size: clamp(15px, 6vw, 30x);
+  font-size: clamp(20px, 7vw, 35px);
   color: #7A8450;
-  margin-bottom: 10px;
+   margin-top: 30px;
 }
 
 /* texto principal */
@@ -1970,6 +2023,9 @@ clip-path: inset(0 0 0 0);
   .final-footer-img {
     max-width: 900px; /* evita deformación */
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
   }
 }
 
@@ -1989,11 +2045,11 @@ clip-path: inset(0 0 0 0);
 }
 
 /* CASCADA */
-
-.f1.visible { transition-delay: 0.3s; }
-.f2.visible { transition-delay: 0.7s; }
-.f3.visible { transition-delay: 1.1s; }
-.f4.visible { transition-delay: 1.5s; }
+.f0.visible { transition-delay: 0.3s; }
+.f1.visible { transition-delay: 0.7s; }
+.f2.visible { transition-delay: 1.1s; }
+.f3.visible { transition-delay: 1.5s; }
+.f4.visible { transition-delay: 1.8s; }
 
 
 /* =========================================================
@@ -2075,17 +2131,20 @@ clip-path: inset(0 0 0 0);
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 0px 0 10px;
+  margin: -20px 0 10px;;
 }
 
 /* ✅ AHORA MÁS PEQUEÑA (30%) */
+
 .final-torn-img {
   width: min(70vw, 280px); /* 🔥 antes ~360px → reducido */
   display: block;
   z-index: 1;
   object-fit: cover;
-  height: 400px; /* 🔥 ajusta este valor */
+  height: 340px; /* 🔥 ajusta este valor */
   object-position: center center;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 
@@ -2097,7 +2156,7 @@ clip-path: inset(0 0 0 0);
   left: 50%;
   transform: translateX(-50%);
   width: min(70vw, 280px); /* ✅ MISMO ANCHO QUE LA FOTO */
-  height: 70px; /* 🔥 reducido */
+  height: 55px; /* 🔥 reducido */
   background: url("img/torn-top.png") top center no-repeat;
   background-size: 100% auto;
   z-index: 2;
@@ -2112,7 +2171,7 @@ clip-path: inset(0 0 0 0);
   left: 50%;
   transform: translateX(-50%);
   width: min(70vw, 280px); /* ✅ MISMO ANCHO */
-  height: 70px;
+  height: 55px;
   background: url("img/torn-bottom.png") bottom center no-repeat;
   background-size: 100% auto;
   z-index: 2;
